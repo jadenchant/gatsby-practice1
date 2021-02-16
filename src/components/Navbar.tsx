@@ -1,14 +1,14 @@
-import React from "react"
-import { Link }  from 'gatsby';
-import navbarStyle from './container.module.css';
+import React from "react";
+import { Link } from "gatsby";
+import "../css/Navbar.module.css";
 
-const Navbar = (props : string) => {
+function Navbar(props: string) {
   return (
-  <div className="navbar">
+    <div className='main'>
       <Link to='/'>Home</Link>
       <Link to='/about'>About</Link>
       <Link to='/projects'>Projects</Link>
-  </div>
+    </div>
   );
 }
 
