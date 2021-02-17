@@ -88,7 +88,12 @@ export default function Contact() {
       <Navbar />
       <h1>Contact</h1>
 
-      <form>
+      <form
+        onSubmit={event => {
+          event.preventDefault();
+          navigate("/form-submitted/");
+        }}
+      >
         <label>
           First Name:
           <input
