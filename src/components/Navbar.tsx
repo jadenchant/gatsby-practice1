@@ -5,10 +5,18 @@ import "../css/Navbar.css";
 function Navbar(props: string) {
   return (
     <div className='navbar'>
-      <Link to='/'>Home</Link>
-      <Link to='/about'>About</Link>
-      <Link to='/portfolio'>Portfolio</Link>
-      <Link to='/contact'>Contact</Link>
+      <Link to='/' activeClassName='current'>
+        Home
+      </Link>
+      <Link to='/about' activeClassName='current'>
+        About
+      </Link>
+      <Link to='/portfolio' activeClassName='current'>
+        Portfolio
+      </Link>
+      <Link to='/contact' activeClassName='current'>
+        Contact
+      </Link>
     </div>
   );
 }
