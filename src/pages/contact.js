@@ -28,29 +28,40 @@ export default function Contact() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    checkValidInputs();
+    const formError = checkValidInputs();
 
-    if (validInputs) {
+    if (!formError) {
+      navigate("/form-submitted/");
     }
   }
 
   function checkValidInputs() {
+    let missing = false;
+
     if (fname === "") {
       setMissingFname("Missing First Name");
+      missing = true;
     }
     if (lname === "") {
       setMissingLname("Missing Last Name");
+      missing = true;
     }
     if (email === "") {
       setMissingEmail("Email Address");
       setIncorrectEmail("Missing @ and . in Email Address");
-    } else if (email.indexOf("@") !== -1 && email.indexOf(".") !== -1) {
-      setIncorrectEmail("Missing @ and . in Email Address");
-    } else if (email.indexOf("@") !== -1) {
-      setIncorrectEmail("Missing @ in Email Address");
-    } else if (email.indexOf(".") !== -1) {
-      setIncorrectEmail("Missing . in Email Address");
+      missing = true;
+    } else if (email.indexOf("@") === -1 && email.indexOf(".") === -1) {
+      setIncorrectEmail('Missing "@" and "." in Email Address');
+      missing = true;
+    } else if (email.indexOf("@") === -1) {
+      setIncorrectEmail('Missing "@" in Email Address');
+      missing = true;
+    } else if (email.indexOf(".") === -1) {
+      setIncorrectEmail('Missing "." in Email Address');
+      missing = true;
     }
+
+    return missing;
   }
 
   return (
@@ -58,13 +69,7 @@ export default function Contact() {
       <Navbar />
       <h1>Contact</h1>
 
-      <form
-        onSubmit={event => {
-          event.preventDefault();
-
-          navigate("/form-submitted/");
-        }}
-      >
+      <form>
         <label>
           First Name:
           <input
