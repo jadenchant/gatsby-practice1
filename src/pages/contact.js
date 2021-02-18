@@ -7,6 +7,10 @@ export default function Contact() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   const [email, setEmail] = useState("");
+  const [missingFname, setMissingFname] = useState("");
+  const [missingLname, setMissingLname] = useState("");
+  const [missingEmail, setMissingEmail] = useState("");
+  const [incorrectEmail, setIncorrectEmail] = useState("");
 
   const handleInputChange = event => {
     const target = event.target;
@@ -22,65 +26,31 @@ export default function Contact() {
     }
   };
 
-  function handleSubmit() {
+  function handleSubmit(event) {
+    event.preventDefault();
     checkValidInputs();
+
+    if (validInputs) {
+    }
   }
 
   function checkValidInputs() {
-    const missingInput = checkMissingInput();
-    const validEmail = checkValidEmail();
-  }
-
-  // Function that checks for missing inputs
-  // Returns string
-  // Format '000' for missing none,
-  // Format '111 form missing all, ect
-  function checkMissingInput() {
-    let missingInput;
     if (fname === "") {
-      missingInput += "1";
-    } else {
-      missingInput += "0";
+      setMissingFname("Missing First Name");
     }
-
     if (lname === "") {
-      missingInput += "1";
-    } else {
-      missingInput += "0";
+      setMissingLname("Missing Last Name");
     }
-
     if (email === "") {
-      missingInput += "1";
-    } else {
-      missingInput += "0";
+      setMissingEmail("Email Address");
+      setIncorrectEmail("Missing @ and . in Email Address");
+    } else if (email.indexOf("@") !== -1 && email.indexOf(".") !== -1) {
+      setIncorrectEmail("Missing @ and . in Email Address");
+    } else if (email.indexOf("@") !== -1) {
+      setIncorrectEmail("Missing @ in Email Address");
+    } else if (email.indexOf(".") !== -1) {
+      setIncorrectEmail("Missing . in Email Address");
     }
-
-    return missingInput;
-  }
-
-  // Function that checks the email for @ and .
-  // Returns stirng
-  // Possible outputs: '@', '.', 'Both', Null
-  function checkValidEmail() {
-    let isMissingAt = true;
-    let isMissingDot = true;
-
-    if (email.indexOf("@") !== -1) {
-      isMissingAt = false;
-    }
-    if (email.indexOf(".") !== -1) {
-      isMissingDot = false;
-    }
-
-    if (isMissingAt && isMissingDot) {
-      return "Both";
-    } else if (isMissingAt) {
-      return "@";
-    } else if (isMissingDot) {
-      return ".";
-    }
-
-    return null;
   }
 
   return (
@@ -91,6 +61,7 @@ export default function Contact() {
       <form
         onSubmit={event => {
           event.preventDefault();
+
           navigate("/form-submitted/");
         }}
       >
@@ -122,7 +93,17 @@ export default function Contact() {
           />
         </label>
         <button onClick={handleSubmit}>Submit</button>
+        <div className='form-error'></div>
       </form>
+
+      <div className='input-error'>
+        <ul>
+          <li>{missingFname}</li>
+          <li>{missingLname}</li>
+          <li>{missingEmail}</li>
+          <li>{incorrectEmail}</li>
+        </ul>
+      </div>
 
       <h1>{fname}</h1>
       <h1>{lname}</h1>
