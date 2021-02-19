@@ -6,6 +6,7 @@ export default function Home() {
   return (
     <div className='home'>
       <Navbar current='home' />
+      <h1>Home</h1>
     </div>
   );
 }

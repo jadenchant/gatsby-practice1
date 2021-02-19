@@ -1,4 +1,28 @@
+@import "_config.scss";
+
 .navbar {
+  position: relative;
+  width: 100%;
+  min-height: 8vh;
+  background-color: $background-color;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 0 5rem 0 5rem;
+  align-content: center;
+
+  .item {
+    font-size: 1.5rem;
+    color: $text-color;
+
+    -webkit-user-drag: false;
+  }
+
+  .current {
+    font-weight: bolder;
+  }
 
   a {
     text-decoration: none;

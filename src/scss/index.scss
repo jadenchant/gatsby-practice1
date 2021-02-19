@@ -1,1 +1,6 @@
-@import '_config.scss';
+@import "_config.scss";
+
+body {
+  max-height: 100vh;
+  width: 100%;
+}
