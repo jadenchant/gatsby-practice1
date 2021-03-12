@@ -82,7 +82,9 @@ export default function Contact() {
 
       <form>
         <label className='form-item'>
-          <p className='form-item-name'>First Name *</p>
+          <p className='form-item-name'>
+            First Name <span className='required'>*</span>
+          </p>
           <input
             name='fname'
             type='string'
@@ -92,7 +94,9 @@ export default function Contact() {
           />
         </label>
         <label className='form-item'>
-          <p className='form-item-name'>Last Name *</p>
+          <p className='form-item-name'>
+            Last Name <span className='required'>*</span>
+          </p>
           <input
             name='lname'
             type='string'
@@ -102,7 +106,9 @@ export default function Contact() {
           />
         </label>
         <label className='form-item'>
-          <p className='form-item-name'>Email: *</p>
+          <p className='form-item-name'>
+            Email: <span className='required'>*</span>
+          </p>
           <input
             name='email'
             type='string'
@@ -112,7 +118,7 @@ export default function Contact() {
           />
         </label>
         <button onClick={handleSubmit} className='form-submit'>
-          Submit
+          Next
         </button>
       </form>
 

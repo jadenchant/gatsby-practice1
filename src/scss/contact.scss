@@ -1,1 +1,21 @@
-@import '_config.scss';
+@import "_config.scss";
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .form-item {
+    padding-bottom: 2vh;
+    &-name {
+      .required {
+        color: red;
+      }
+    }
+    &-input {
+    }
+  }
+  .form-submit {
+    justify-self: center;
+  }
+}
