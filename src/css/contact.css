@@ -5,7 +5,7 @@
   padding: 0;
 }
 
-h1 {
+.contact h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,7 +14,7 @@ h1 {
           justify-content: center;
 }
 
-form {
+.contact form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,24 +30,24 @@ form {
           align-items: center;
 }
 
-form .form-item {
+.contact form .form-item {
   padding-bottom: 2vh;
 }
 
-form .form-item-name .required {
+.contact form .form-item-name .required {
   color: red;
 }
 
-form .form-item-input {
+.contact form .form-item-input {
   width: 20rem;
 }
 
-form .form-submit {
+.contact form .form-submit {
   -ms-grid-column-align: center;
       justify-self: center;
 }
 
-.input-error {
+.contact .input-error {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,7 +57,7 @@ form .form-submit {
   margin-top: 1.5rem;
 }
 
-.input-error li {
+.contact .input-error li {
   list-style-type: none;
 }
 /*# sourceMappingURL=contact.css.map */

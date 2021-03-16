@@ -130,10 +130,6 @@ export default function Contact() {
           <li>{incorrectEmail}</li>
         </ul>
       </div>
-
-      <h1>{fname}</h1>
-      <h1>{lname}</h1>
-      <h1>{email}</h1>
     </div>
   );
 }
