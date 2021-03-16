@@ -29,7 +29,7 @@ module.exports = {
         background_color: `#363c45`,
         theme_color: `#3e90cc`,
         display: `standalone`,
-        icon: "./src/cart.svg",
+        icon: "./static/icon-v2.png",
       },
     },
   ],
