@@ -34,7 +34,7 @@
 }
 
 .navbar .current {
-  font-weight: bolder;
+  color: #3e90cc;
 }
 
 .navbar a {

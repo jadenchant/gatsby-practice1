@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { navigate } from "gatsby";
+import React from "react";
+// import { navigate } from "gatsby";
 import Navbar from "../components/Navbar";
 import "../css/contact.css";
 

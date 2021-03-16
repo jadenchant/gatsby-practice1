@@ -1,5 +1,9 @@
 @import "_config.scss";
 
+h1 {
+  display: flex;
+  justify-content: center;
+}
 form {
   display: flex;
   flex-direction: column;
@@ -13,9 +17,20 @@ form {
       }
     }
     &-input {
+      width: 20rem;
     }
   }
   .form-submit {
     justify-self: center;
+  }
+}
+
+.input-error {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+
+  li {
+    list-style-type: none;
   }
 }
